@@ -1,0 +1,50 @@
+﻿***********************************
+****       Readme for BAS      ****
+***********************************
+
+This file contains a change log for ExpandIT BAS
+This mean all the BAS folder except PEMP & HTML5. 
+There will be seperate changelog's in those folders.
+
+
+Date         User       Description
+--------------------------------------------------------------------------------
+2014-12-15   RSP        Fixed a bug in PEMP/include/weblogic_online.asp, causing local changes to risk being
+                        deleted, in case of an out-of-sync situation when doing a quick-sync
+
+2014-11-23   RSP        Fixed a bug with smtp authentication in the BAS e-mail functionality
+
+2014-11-21   RSP        Fixed a bug in the change collation code
+
+2014-10-31   RSP        Added client->server tables for inspect + yellow background color on mismatches in data.
+                        (Pending commits and pending synchronization)
+
+2014-09-19   RSP        Added a checkbox to control if 2-way synchronization should be enabled when adding
+                        tables or running a check DB. The default is "yes", so if the BAS ASP code is updated with
+                        this on an existing or upgraded solution, the user should uncheck the checkbox to keep the 
+                        current behavior of the system. If enabled, all Client->Server tables should get a filter
+                        added to prevent all historical data from being synchronized to all clients.
+
+2014-09-02   RSP        Modules/emsm_NewServiceOrder/*
+                        Changed editing of existing service orders to create new records with RecordAction='MODIFY'
+
+2014-07-17   RAN        Modules/OrderApproval/OrderList.asp
+                        HT changed to H and several H applied.
+                        Modules/emsm_serviceorders/OrderListASP.asp
+                        Minor change to handle empty BASGuid. 
+
+2014-06-25   RAN        Modules/emsm_NewServiceOrder/
+                        Alternative shipping addresses did not work as some of the guid's had empty spaces in them. Fixed.
+                        It is now possible to easily add BillTo to be the same as the current customer (NEW had issues here).
+                        Minor modifications to UI.
+                        Pop-up dialog has been modified in with to fix narrower screens better.
+
+2014-06-25   RAN        Modules/Customers/CustomerZoom.asp
+                        The "Country" filed was a simple text field. Modified to be anactual drop down with countires.
+                        This corresponds with selecting customer when creating service orders.                                
+
+2014-06-23   RAN        Modules/emsm_NewServiceOrder/_NewServiceOrder.asp
+                        The line "dictServiceOrder.client_guid = CLng(Timer() * 100 + Rnd() * 2000000)" has been commented out.
+                        client_guid is maintiand by internal BAS code and should not be set in normalt code.                            
+                         
+2014-06-23   RAN        Introduced this readme :-)
